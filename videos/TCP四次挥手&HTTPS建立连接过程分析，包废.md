@@ -1,6 +1,6 @@
 # TCP 四次挥手&HTTPS 建立连接过程分析，包废
 
-- [前往视频](https://www.bilibili.com/video/BV1xG4y147G9/?vd_source=bd67f58df1f313f8dd95716289a6f69b)
+- [前往视频](https://www.bilibili.com/video/BV1xG4y147G9)
 
 上期视频中
 把 TCP 3 次握手

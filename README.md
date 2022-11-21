@@ -2,6 +2,15 @@
 
 我打算把视频地址和视频中的字幕放到仓库里面，方便在 GitHub 直接搜索关键词找视频
 
-- [TCP 四次挥手&HTTPS 建立连接过程分析，包废](https://www.bilibili.com/video/BV1xG4y147G9/?vd_source=bd67f58df1f313f8dd95716289a6f69b)
+- [TCP 四次挥手&HTTPS 建立连接过程分析，包废](https://www.bilibili.com/video/BV1xG4y147G9)
+- [TCP 三次握手教程，手把手抓包分析](https://www.bilibili.com/video/BV1b14y1H77J)
+- [有一个前端程序员给你的小技巧待查收](https://www.bilibili.com/video/BV1Ct4y1N7hi/)
+- [前端浏览器缓存手把手教程](https://www.bilibili.com/video/BV1r24y127M3/)
+- [前端Cookie手把手教程](https://www.bilibili.com/video/BV1uG4y1t7dm/)
+- [前端jsonp跨域手把手教程](https://www.bilibili.com/video/BV1Av4y1Q7UZ/)
+- [前端CORS跨域手把手教程](https://www.bilibili.com/video/BV1M84y1v7qH/)
+- [开源网络请求库 AXIOS 手把手教学，附带关键源码分析（下）](https://www.bilibili.com/video/BV1jG4y1b7KA)
+- [开源网络请求库 AXIOS 手把手教学，附带关键源码分析（上）](https://www.bilibili.com/video/BV1nv4y1D7t3)
+- [前端 fetch 应该怎么用？](https://www.bilibili.com/video/BV1mm4y1F7xG)
+- [听说有人因为不会手写XMLHttpRequest而错失了20K offer？](https://www.bilibili.com/video/BV1kg411z7nD)
 
-- [TCP 三次握手教程，手把手抓包分析](https://www.bilibili.com/video/BV1b14y1H77J/?vd_source=bd67f58df1f313f8dd95716289a6f69b)

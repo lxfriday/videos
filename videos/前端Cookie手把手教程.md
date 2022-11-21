@@ -1,0 +1,299 @@
+# 前端Cookie手把手教程
+
+- [前往视频](https://www.bilibili.com/video/BV1uG4y1t7dm/)
+
+
+浏览器cookie
+相信各位做前端的同学应该都知道
+它是前端领域里面
+非常重要的一个内容
+跟跨域是一样的
+如果你面试的时候答不上来
+cookie相关的问题的话
+那你也可以准备投下一家了
+看完本期视频呢
+你可能对cookie会有一个新的认识
+在浏览器的调试工具中找到应用
+然后找到左边的cookie
+浏览器中一条cookie
+足足有12条相关的信息
+从这些多到离谱的cookie属性
+你应该就能知道cookie还是很有难度的
+在了解cookie之前呢
+我们需要明确跨站和跨域的概念
+cookie的应用是和跨站跨域紧密相关的
+cookie中对于同站的判断是
+只要顶级域名和二级域名一样
+就可以认为是同站
+下面这几个都属于顶级域名
+像a.com到b.com的请求就属于跨站了
+而a.a.com和b.a.com则属于同站
+而跨域呢在前几期视频里面都有讲到
+只要两个URL的
+协议或者是域名或者是端口不同
+那就跨域了
+这两个URL地址的协议不同
+所以向对方地址发起的请求
+就属于跨域请求
+浏览器中对于跨域的判断
+要比跨站的判断要严格很多
+在浏览器的控制台中输入document.cookie
+就可以获取到部分的cookie信息
+获取到的是一个字符串
+可以用split 把它给拆分开来
+它的序列化方式是 k1=v1; k2=v2;
+而浏览器中实际存储的可不止这四条cookie
+只要httponly被打上了勾
+纳那用js是无法获取和操作这个cookie的
+这种cookie
+只能由浏览器和服务端来控制
+通常这种cookie
+是用来存储一些和用户身份信息
+或是安全相关的凭证的
+浏览器中设置cookie也是使用的document.cookie
+在cookie面板中
+也能看到我们自己设置的cookie信息
+而要变更一条cookie的值呢
+它的操作和新增是一样的
+也就是说存在相同key的cookie的时候
+那就变更这个cookie的值
+否则就新增一条cookie
+而删除操作呢
+也是使用的document.cookie
+删除的时候只要你指定好对应的key
+它的值你可以不用传
+然后再给它的max-age属性传递一个负值
+这个cookie就会被删除
+代码执行之后
+cookie面板这条cookie就会直接消失
+服务端在浏览器种cookie 
+使用的是set-cookie HTTP头
+每个cookie都有它的名字
+以及它对应的值
+获取某个cookie对应值的时候
+可以把document.cookie返回的字符串
+用分号进行分割
+分割之后的每条都是一个kv对
+把一条一条的cookie存到对象中之后
+就可以比较方便的获取了
+domain是cookie能够作用的主机地址
+domain里面的名堂非常的多
+首先domain里面不携带协议和端口
+这个地方端口不同并不会影响cookie
+协议不同也不会影响cookie
+但是cookie的部分属性
+只有在HTTPS下才能够有效
+在https://a.com中我随便写了4个cookie
+然后打开http://a.com这四个cookie 依然存在
+而我把端口号改成1234的时候
+这四个cookie还是存在
+这就是cookie的特性
+不区分协议和端口
+细心一点的靓仔应该已经发现了
+有的domain最前面有一个.
+而有的没有
+有.的话
+就表示这个cookie可以作用于当前域及其子域
+我在a.com手动添加了两个cookie 
+一个作用于a.com 一个作用于点.a.com 
+然后在a.com的子域
+sub.a.com 中
+就只会存在domain为.a.com的这个cookie
+在设置cookie的时候
+domain也有要注意的地方
+如果新增cookie的时候没有带上domain
+那么这个cookie只能用于当前域
+也就是a.com 
+而如果我设置domain=a.com 
+也就是当前域的时候
+兄弟们
+你们猜一猜它的作用域是什么
+它的作用域 居然是 .a.com
+这个一定得注意了
+设置domain是 .a.com 的时候
+它的作用域也是 .a.com 也就是说
+这两种domain的设置方法是一样的
+关于domain 还有最后一点需要注意
+就是在子域里面可以给父域设置cookie
+比如说我们在 sub2.sub1.a.com 里面
+设置了一个domin为 .a.com 的cookie
+那我们可以在a.com获取到这个cookie
+也可以在 b.a.com 获取到这个cookie
+因为这个cookie是作用于 a.com  及其子域的
+但是我们不能在当前域的子域
+或者跨域设置cookie
+比如说在 a.com 
+设置domain为 b.a.com 或者是domain为 b.com 的cookie
+都不行
+关于domain就真没了
+是真的没了
+因为domain规则比较复杂
+大家可以多看几遍慢慢消化
+path 用来指定URL的路径
+比如在 a.com/a
+这个地址设置了一个cookie
+这个cookie的path是 /a
+那在a.com/a/b这个页面
+就有patha这个cookie
+而在a.com/b这个页面
+这个页面是没有patha cookie的
+这个属性用的比较少啊
+这两个是和cookie有效期相关的属性
+expires 用来指定
+在什么时间之后这个cookie会失效
+而max-age用来指定在多少秒之后这个cookie会失效
+这两个属性同时存在的时候
+max-age优先级更高一点
+先设置一个早晨1:10过期的expiresKey
+然后设置一个max-age=540的maxageKey
+因为1:10离现在只有将近9分钟
+所以这两个cookie的过期时间基本差不多  
+这个显示的时间
+要加上8个小时才是北京时间
+当max-age和expires都存在的时候
+可以看到conflictKey
+这个cookie实际的过期时间是40多天之后
+很显然应用的就是max-age的值
+max-age可以设置成负值或者是正值
+如果设置的是负值
+那就表示立即删除这个cookie
+如果设置的是正值
+那就表示在这个数字对应的秒数之后删除cookie
+expires也是比较类似
+如果把一个cookie的expires属性
+设置成过去的时间
+那么浏览器就会立即删除这条cookie
+另外有一点需要注意
+如果一个cookie既不包含expires
+也不包含max-age
+那么它就是一个会话cookie
+当你关闭浏览器的时候
+这个cookie才会被删除
+注意了哈
+是关闭浏览器才会删除
+你刷新当前页面
+或者是关闭当前的页面tab
+都是不会删除的
+httponly是和cookie安全性
+紧密相关的一个属性
+这个视频前面说到过
+httponly这一栏打上勾的cookie
+用js是无法操作的
+带有httponly的cookie
+只能是由服务端通过响应标头中的set-cookie
+种在浏览器上面
+当你在浏览器中设置的cookie属性
+包含httponly的时候
+这个cookie会被浏览器直接忽略掉
+这里只有一个服务端种的cookie
+通过httponly这个属性
+就可以有效避免用户的关键身份信息被盗用
+大家想一想
+如果没有这个属性的话
+会发生什么事情
+如果网页中被插入了一段恶意js代码
+那这段恶意代码
+是不是就可以拿到
+用户的关键身份信息了
+secure属性用来告诉浏览器
+这个cookie只能用https协议传输
+如果服务段的响应中
+包含带有secure属性的cookie
+但是当前页面的协议是h ttp的
+那么浏览器会忽略这个cookie
+你在https的页面中呢
+也可以自己创建带secure属性的cookie
+这里我们创建了一个带有secure属性的bSecureCookie
+当我们向 https://a.com发起请求的时候
+就会携带上这个bSecureCookie
+而当我们请求 http://a.com 的时候
+是不会有这个cookie的
+兄弟们听完前面的是不是有点懵了呀
+这个属实是因为cookie太过复杂了
+关于samesite这是一个变动比较大的属性
+samesite属性可以限制
+跨站请求时cookie的发送
+曾经因为这个samesite属性的默认值发生变更
+导致他们的不少应用都出现了问题
+samesite的值是 none  lax 或者 strict 中的一个
+none对cookie约束是最小的
+它表示无论是否跨站都会发送cookie
+而strict表示只要是跨站
+就不会携带cookie
+lax是samesite属性的默认值
+它只会允许在部分跨站请求中携带cookie
+samesite属性为lax的cookie
+在a标签
+或者是预加载
+或者是get表单中会发送cookie
+其他的像post或者是iframe或者是AJAX
+都不会发送
+关于samesite属性为none的cookie呢
+它的约束性最弱
+但是只有这个cookie是HTTPS协议进行传输的时候
+浏览器才认为它是有效的
+另外呢这个cookie必须要添加secure属性
+可以看到啊
+即使是HTTPS请求
+浏览器
+这里还是出现了一个橙色的提示
+提示的内容就是缺少secure属性
+导致cookie没办法保存在浏览器上面
+当添加上secure属性之后
+这个cookie
+就能够成功的保存在浏览器上面了
+前面仅仅是演示了none不生效的情况
+接下来
+来看看这3个属性的实际效果和区别
+在浏览器里面创建cookie的时候
+samesite属性也是生效的
+这里也是分别用none lax strict
+以及不带samesite属性来创建了4个cookie
+在cookie面板中的samesite的属性
+有4种情况
+可以看到没有设置samesite属性的时候
+浏览器并不会自动添加lax
+这几个cookie的domain都是 .a.com
+接下来我们发起几种不同的请求
+来看看各种属性的效果
+当我们在a.com请求一个同域地址的时候
+这4个cookie全部带上了
+而当我们在b.com 请求a.com 的时候
+就只有samesite为none的cookie被发送过去了
+所以把存储有关键身份信息的cookie
+设成samesite=none是非常危险的
+我们再看看网页上面提交表单的效果
+在b.com中有一个表单
+这个表单的目标地址是a.com 
+这个由b.com 
+提交到a.com的表单
+携带有samesite=lax、samesite=none和不设置samesite的cookie
+而samesite为strict的cookie
+不会在跨站请求的时候被发送
+如果b.com
+提交的是一个POST表单的话
+我们可以看到这个POST表单中
+就只有一个samesite=none的cookie了
+被框中的这三个一个都没有发送
+这里
+samesite=lax的cookie和不设置samesite的cookie
+行为是一样的
+关于samesite=lax的时候
+它的更多行为可以看这个表格
+兄弟们注意一点哈
+samesite属性
+只有在跨站请求的时候才会起作用
+有没有发现cookie是真的很麻烦很麻烦
+但是也没有办法
+因为cookie又重要
+又很容易出现安全性问题
+最后的这个sameparty属性
+目前我基本没有看到有网站用这个属性
+它旁边还有一个partition(par ti tion) key属性
+也是基本没有看到有网站用过
+这进度条已经来到了将近9分钟了
+咱就直接略过吧
+今天cookie的这期内容属实是有点长啊
+大家如果觉得有用的话
+可以收藏着慢慢看哈
+那么本期视频到这里就结束了

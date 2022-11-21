@@ -1,6 +1,6 @@
 # TCP 三次握手教程，手把手抓包分析
 
-- [前往视频](https://www.bilibili.com/video/BV1b14y1H77J/?vd_source=bd67f58df1f313f8dd95716289a6f69b)
+- [前往视频](https://www.bilibili.com/video/BV1b14y1H77J)
 
 关于 TCP 三次握手和四次挥手
 各位程序员兄弟们
