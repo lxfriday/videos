@@ -2,6 +2,7 @@
 
 我打算把视频地址和视频中的字幕放到仓库里面，方便在 GitHub 直接搜索关键词找视频
 
+- [前端八股送命题之nodeValue、innerText、textContent的区别](https://www.bilibili.com/video/BV1F8411j7Hp)
 - [分析3个前端安全性相关的HTTP头](https://www.bilibili.com/video/BV12e4y1p7cp/)
 - [TCP 四次挥手&HTTPS 建立连接过程分析，包废](https://www.bilibili.com/video/BV1xG4y147G9)
 - [TCP 三次握手教程，手把手抓包分析](https://www.bilibili.com/video/BV1b14y1H77J)
