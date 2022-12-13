@@ -2,7 +2,7 @@
 
 我打算把视频地址和视频中的字幕放到仓库里面，方便在 GitHub 直接搜索关键词找视频
 
-
+- [面试官：说一说GET、POST的区别](https://www.bilibili.com/video/BV1Qd4y1e76a/)
 - [面试官：你知道BFC吗？](https://www.bilibili.com/video/BV1Bd4y1e7od)
 - [面试官：说一说CSS选择器的优先级](https://www.bilibili.com/video/BV1Me411K7kQ)
 - [面试官：用CSS实现垂直居中的方法有哪些？](https://www.bilibili.com/video/BV1ne4y137MY)
