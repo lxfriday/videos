@@ -2,6 +2,7 @@
 
 我打算把视频地址和视频中的字幕放到仓库里面，方便在 GitHub 直接搜索关键词找视频
 
+- [面试官：说一说事件循环？](https://www.bilibili.com/video/BV1Qe4y1K7r3)
 - [面试官：setState是同步的还是异步的？](https://www.bilibili.com/video/BV1MW4y1u7Um)
 - [面试官：说一说GET、POST的区别](https://www.bilibili.com/video/BV1Qd4y1e76a/)
 - [面试官：你知道BFC吗？](https://www.bilibili.com/video/BV1Bd4y1e7od)
